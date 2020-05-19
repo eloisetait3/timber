@@ -2,7 +2,6 @@ class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update]
 
   def show
-    @booking = Booking.new
   end
 
   def edit
@@ -21,4 +20,9 @@ class HousesController < ApplicationController
   def set_house
     @house = House.find(params[:id])
   end
+
+  def house_params
+    params.require(:house).permit(:name, :location, :description, :price)
+  end
+
 end
