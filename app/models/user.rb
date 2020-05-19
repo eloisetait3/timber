@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :houses, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  # Accessing users own booked houses >>
+  has_many :booked_houses, through: :bookings, source: :house
 end
