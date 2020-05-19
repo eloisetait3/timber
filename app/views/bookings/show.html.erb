@@ -1,0 +1,6 @@
+<% current_user.bookings.each do |booking| %>
+  <%= link_to booking.house.name, house_booking_path(booking.house, booking) %>
+  <%= booking.checkin %>
+  <%= booking.checkout %>
+<% end %>
+

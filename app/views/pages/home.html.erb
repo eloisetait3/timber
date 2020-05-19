@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
+<nav class="navbar navbar-light bg-light border">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
+
+<div class="container d-flex justify-content-center mt-2">
+  <div class="col-6">
+    <div class="card p-3">
+      <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container d-flex flex-row justify-content-around align-items-center mt-3">
+  <div class="col-8">
+    <ul class="d-flex justify-content-around p-3 mr-3" style="list-style: none;">
+      <% @houses_sample.each do |house| %>
+        <%= link_to house_path(house) do %>
+          <div class="card p-3 mr-5">
+            <li><%= house.name %></li>
+            <li><%= house.price %></li>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to "Browse our treehouses", houses_path, class: "btn btn-primary m-3" %>
+  </div>
+</div>
