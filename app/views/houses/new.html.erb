@@ -1,14 +1,13 @@
 <div class="container">
   <div class="col-6 d-flex flex-column align-items-center">
     <div class="card p-3">
-        <h2>Add your treehouse</h2>
-        <%= simple_form_for [ @user, @house ] do |f| %>
-          <%= f.input :name %>
-          <%= f.input :location %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
-        <% end %>
+        <h2>Add your Treehouse</h2>
+        <%= render partial: "shared/form", locals: {house: @house} %>
     </div>
   </div>
+  <div class= "links">
+    <p><%= link_to "Profile", user_path %></p>
+    <p><%= link_to "Home", "pages#home" %></p>
+    <p><%= link_to "See all our available Treehouses", houses_path %></p>
+  </div> 
 </div>
