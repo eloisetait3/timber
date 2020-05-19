@@ -1,6 +1,12 @@
 <% current_user.bookings.each do |booking| %>
-  <%= link_to booking.house.name, house_booking_path(booking.house, booking) %>
+  <%= link_to booking.house.name, house_bookings_path(booking.house_id, booking) %>
   <%= booking.checkin %>
   <%= booking.checkout %>
+  <li class="list-group-item">
+        <i class="fas fa-trash-alt"></i>
+      <%= link_to "Remove",
+        house_booking_path(booking.house_id, booking),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  </li>
 <% end %>
-
