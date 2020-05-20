@@ -7,7 +7,7 @@
   	<ul class="d-flex">
   	  <% @houses.each do |house| %>
       	<li class = "cards">
-          <div class = "card-category d-flex flex-wrap"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dynjb5ftd/image/upload/v1589976617/treehouses/Treehouse_1_m2b59o.jpg)">
+          <div class = "card-category d-flex flex-wrap"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/originals/cb/04/31/cb043197738981fdab19b1de30e79b83.jpg)">
           <h3><%= link_to house.name, house_path(house) %></h3>
           <p><%= house.description %></p>
           <p><%= house.price %> | <%= house.location %></p>
