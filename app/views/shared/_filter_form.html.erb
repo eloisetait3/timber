@@ -1,6 +1,6 @@
 <%= simple_form_for :search, path: path, method: :get do |f|%>
   <div class="d-flex align-items-center">
-    <%= f.input :location %>
+    <%= f.input :location%>
     <%# f.input :price, as: :radio_buttons, collection: ["cheap", "medium", "expensive"] %> <%# We will return on this filter tomorrow %>
     <%= f.submit "Filter", class: "btn btn-primary h-25" %>
   </div>
