@@ -15,6 +15,7 @@
       <% @houses_sample.each do |house| %>
         <%= link_to house_path(house) do %>
           <div class="card p-3 mr-5">
+            <%=cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
             <li><%= house.name %></li>
             <li><%= house.price %></li>
           </div>
