@@ -1,10 +1,12 @@
 <div class = "container">
   <nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Navbar</span>
+    <span class="navbar-brand mb-0 h1">Navbar</span>
   </nav>
-  <p><%= link_to 'Profile', user_path(current_user) %></p>
+
+
   <div class = "filter-form">
-    <h2>This will be a search filter-form</h2>
+    <%# form-filter %>
+    <%= render "shared/filter_form", path: houses_path %>
   </div>
   <div class = "treehouses-index-display">
   	<ul>

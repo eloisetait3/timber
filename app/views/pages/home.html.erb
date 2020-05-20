@@ -1,9 +1,9 @@
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
+<%# Navbar %>
 <nav class="navbar navbar-light bg-light border">
   <span class="navbar-brand mb-0 h1">Navbar</span>
 </nav>
 
+<%# Header %>
 <div class="container d-flex justify-content-center mt-2">
   <div class="col-6">
     <div class="card p-3">
@@ -12,6 +12,12 @@
   </div>
 </div>
 
+<%# Search bar form %>
+<div class="container mt-3">
+  <%= render "shared/filter_form", path: root_path %>
+</div>
+
+<%# Sample of houses & search results %>
 <div class="container d-flex flex-row justify-content-around align-items-center mt-3">
   <div class="col-8">
     <ul class="d-flex justify-content-around p-3 mr-3" style="list-style: none;">

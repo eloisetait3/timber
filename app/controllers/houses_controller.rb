@@ -18,7 +18,11 @@ class HousesController < ApplicationController
   end
  
   def index
-  	@houses = House.all
+    if params[:search].nil?
+      @houses = House.all
+    else
+      filter
+    end
   end
  
   def show
@@ -36,6 +40,12 @@ class HousesController < ApplicationController
   end
 
   private
+
+  def filter
+    @filter = params[:search][:location]
+    @houses = House.where('location ilike ?', "%#{@filter}%")
+    # @houses_sample = House.where('location ilike ? AND price ilike ?',"%#{@filter}%", "%#{@range}%")  # We will return on this filter tomorrow
+  end
 
   def set_house
     @house = House.find(params[:id])
