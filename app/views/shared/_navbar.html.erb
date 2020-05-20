@@ -1,26 +1,22 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom border-light">
-  <div class="navbar-header">  
-    <%= image_tag "Logo.png", alt: "alttext", width: 30, height: 40 %>
+<div class="navbar d-flex navbar-expand-sm navbar-light navbar-lewagon border-bottom border-light">
+  <div class="navbar-header">
+    <%= image_tag "old-logo.png", alt: "alttext", width: 30, height: 40 %>
     <%= link_to 'Timber', root_path, :class => 'navbar-brand' %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
           <% if current_user %>
-            <li class="nav-item btn timber-btn"><%= link_to('My Account', user_path(current_user)), class: "dropdown-item" %></li>
-            <li class="nav-item btn timber-btn"><%= link_to "Sign out", destroy_user_session_path, :method => :delete class: "dropdown-item" %></li>
-            <%= cl_image_tag("timber/Signed_in_user_avatar_1_c0bxzl.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <li class="nav-item btn timber-btn"><%= link_to 'My Account', user_path(current_user)%></li>
+            <li class="nav-item btn timber-btn"><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
+            <%= cl_image_tag "timber/Signed_in_user_avatar_1_c0bxzl.jpg", class: "avatar" %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <% else %>
-            <li class="nav-item dropdown btn timber-btn"><%= link_to('Sign in', new_user_session_path), class: "dropdown-item" %></li>
-            <li class="nav-item dropdown btn timber-btn"><%= link_to('Sign up', new_user_registration_path), class: "dropdown-item" %></li>
+            <% else %>
+            <li class="nav-item dropdown btn timber-btn"><%= link_to 'Sign in', new_user_session_path %></li>
+            <li class="nav-item dropdown btn timber-btn"><%= link_to 'Sign up', new_user_registration_path %></li>
           <% end %>
             </div>
-           </li>
         </ul>
-      </div>
-    </div
+    </div>
 </div>
+
