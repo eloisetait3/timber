@@ -12,13 +12,17 @@ $h1-font-size:                $font-size-base * 4 !default;
 $h2-font-size:                $font-size-base * 3 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 
+
+
 // Colors
 $body-color: $gray;
+$navbar-light-color: $white; 
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -26,3 +30,4 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
