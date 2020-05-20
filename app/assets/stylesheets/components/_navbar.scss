@@ -1,4 +1,8 @@
-.navbar {
+.navbar-brand {
+  color: white!important;
+}
+
+.navbar-lewagon {
   justify-content: space-between;
   background: white;
 }
@@ -10,3 +14,4 @@
 .navbar .navbar-brand img {
   width: 40px;
 }
+
