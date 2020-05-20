@@ -1,17 +1,22 @@
-<%# Header %>
-<div class="container d-flex justify-content-center mt-2">
-  <div class="col-6">
-    <div class="card p-3">
-      <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
+<div class = "timber-container">
+  <div class="container d-flex justify-content-center mt-2">
+     <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
+
+    <%# Header %>
+    <div class="container d-flex justify-content-center mt-2">
+      <div class="col-6">
+        <div class="card p-3">
+          <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<%# Search bar form %>
-<div class="container mt-3">
-  <%= render "shared/filter_form", path: root_path %>
-</div>
+    <%# Search bar form %>
+    <div class="container mt-3">
+      <%= render "shared/filter_form", path: root_path %>
+    </div>
 
+<<<<<<< HEAD
 <%# Sample of houses & search results %>
 <div class="container d-flex flex-row justify-content-around align-items-center mt-3">
   <div class="col-8">
@@ -27,5 +32,24 @@
       <% end %>
     </ul>
     <%= link_to "Browse our treehouses", houses_path, class: "btn btn-primary m-3" %>
+=======
+    <%# Sample of houses & search results %>
+    <div class="container d-flex flex-row justify-content-around align-items-center mt-3">
+      <div class="col-8">
+        <ul class="d-flex justify-content-around p-3 mr-3" style="list-style: none;">
+          <% @houses_sample.each do |house| %>
+            <%= link_to house_path(house) do %>
+              <div class="card p-3 mr-5">
+                <%=cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
+                <li><%= house.name %></li>
+                <li><%= house.price %></li>
+              </div>
+            <% end %>
+          <% end %>
+        </ul>
+        <%= link_to "Browse our treehouses", houses_path, class: "btn btn-primary m-3" %>
+      </div>
+    </div>
+>>>>>>> master
   </div>
 </div>
