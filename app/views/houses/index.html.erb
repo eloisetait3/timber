@@ -1,15 +1,19 @@
-<div class = "container">
+<div class = "timber-container">
   <div class = "filter-form">
-    <h2>This will be a search filter-form</h2>
+    <%# form-filter %>
+    <%= render "shared/filter_form", path: houses_path %>
   </div>
   <div class = "treehouses-index-display">
-  	<ul>
+  	<ul class="d-flex">
   	  <% @houses.each do |house| %>
-      	<li>
-      	  <h3><%= link_to house.name, house_path(house) %></h3>
-      	  <p><%= house.description %></p>
-      	  <p><%= house.price %> | <%= house.location %></p>
-      	</li>
+      	<li class = "cards">
+          <div class = "card-category d-flex flex-wrap"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/originals/cb/04/31/cb043197738981fdab19b1de30e79b83.jpg)">
+          <h3><%= link_to house.name, house_path(house) %></h3>
+          <p><%= house.description %></p>
+          <p><%= house.price %> | <%= house.location %></p>
+        </div>
+
+        </li>
       <% end %>
     </ul>
   </div>

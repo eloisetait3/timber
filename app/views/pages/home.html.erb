@@ -1,26 +1,20 @@
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-
-<div class="container d-flex justify-content-center mt-2">
-  <div class="col-6">
-    <div class="card p-3">
-      <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
+<div class = "timber-container">
+  <div class = "banner">
+    <h1 class = "text-center">Stay somewhere extraordinary....</h1>
+  </div>
+    <div class="row justify-content-center">
+      <%= render "shared/filter_form", path: root_path %>
     </div>
+  <div class= "tree-houses-display cards">
+    <% @houses_sample.each do |house| %>
+      <div class="house-card">
+        <p><%= link_to house.name, house_path(house) %></p>
+        <span class= "house-img"><%=cl_image_tag("treehouses/treehouse_5_fyugpx.jpg") %></span>
+        <p><%= house.price %></p>
+        <p><%= house.description %></p>
+      </div>
+    <% end %>
   </div>
+  <%= link_to "Browse our treehouses", houses_path %>
 </div>
 
-<div class="container d-flex flex-row justify-content-around align-items-center mt-3">
-  <div class="col-8">
-    <ul class="d-flex justify-content-around p-3 mr-3" style="list-style: none;">
-      <% @houses_sample.each do |house| %>
-        <%= link_to house_path(house) do %>
-          <div class="card p-3 mr-5">
-            <li><%= house.name %></li>
-            <li><%= house.price %></li>
-          </div>
-        <% end %>
-      <% end %>
-    </ul>
-    <%= link_to "Browse our treehouses", houses_path, class: "btn btn-primary m-3" %>
-  </div>
-</div>

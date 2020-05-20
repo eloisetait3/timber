@@ -9,7 +9,7 @@
           <% if current_user %>
             <li class="nav-item btn timber-btn"><%= link_to 'My Account', user_path(current_user)%></li>
             <li class="nav-item btn timber-btn"><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
-            <%= cl_image_tag(current_user.photo.key, class: "avatar", crop: :fill) %>
+            <%= cl_image_tag(current_user.photo.key, class: "avatar-bordered") %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% else %>
             <li class="nav-item dropdown btn timber-btn"><%= link_to 'Sign in', new_user_session_path %></li>
@@ -19,3 +19,4 @@
         </ul>
     </div>
 </div>
+
