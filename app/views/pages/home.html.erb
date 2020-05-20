@@ -1,8 +1,3 @@
-<%# Navbar %>
-<nav class="navbar navbar-light bg-light border">
-  <span class="navbar-brand mb-0 h1">Navbar</span>
-</nav>
-
 <%# Header %>
 <div class="container d-flex justify-content-center mt-2">
   <div class="col-6">
@@ -24,6 +19,7 @@
       <% @houses_sample.each do |house| %>
         <%= link_to house_path(house) do %>
           <div class="card p-3 mr-5">
+            <%=cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
             <li><%= house.name %></li>
             <li><%= house.price %></li>
           </div>

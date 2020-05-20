@@ -1,15 +1,12 @@
 <div class=“container”>
-  <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-  </nav>
   <div class= "details">
+    <%=cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
   	<h1><strong><%= @house.name %></strong></h1>
     <p>price: <%= @house.price %></p>
     <p>Location: <%= @house.location %></p>
     <p>Description: <%= @house.description %></p>
   </div>
-  <p><%= link_to "Back to all treehouses", houses_path %>
-  <p><%= link_to "Home", root_path %>
-  <p><%= link_to 'Edit this booking', edit_house_path(@house) %></p>
-  <p><%= link_to 'Book this treehouse', new_house_booking_path(@house)%></p>
+  <p><%= link_to "Go back", houses_path %>
+  <p><%= link_to 'Edit treehouse', edit_house_path(@house) %></p>
+  <p><%= link_to 'Book treehouse', new_house_booking_path(@house)%></p>
 </div>
