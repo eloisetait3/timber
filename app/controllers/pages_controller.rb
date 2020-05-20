@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def home
     # @range = PRICE_RANGES[params[:search][:price]]
     if params[:search].nil?
-      @houses_sample = House.all.sample(4)
+      @houses_sample = House.all.sample(3)
     else
       filter
     end

@@ -1,31 +1,20 @@
 <div class = "timber-container">
-  <div class="container d-flex justify-content-center mt-2">
-      <div class="">
-        <div class="card p-3">
-         <h1 style="text-align: center;">Stay somewhere extraordinary....</h1>
-
-    <%# Search bar form %>
-    <div class="mt-3">
+  <div class = "banner">
+    <h1 class = "text-center">Stay somewhere extraordinary....</h1>
+  </div>
+    <div class="row justify-content-center">
       <%= render "shared/filter_form", path: root_path %>
     </div>
-
-    <%# Sample of houses & search results %>
-    <div class="d-flex flex-row justify-content-around align-items-center mt-3">
-        <ul class="d-flex justify-content-around p-3 mr-3" style="list-style: none;">
-          <% @houses_sample.each do |house| %>
-            <%= link_to house_path(house) do %>
-              <div class="card p-3 mr-5">
-                <%= image_tag "https://img2.10bestmedia.com/Images/Photos/339069/Treehouse-Dream_54_990x660.jpg", :width=>200, :crop=>"scale" %>
-                <li><%= house.name %></li>
-                <li><%= house.price %></li>
-              </div>
-            <% end %>
-          <% end %>
-        </ul>
-        <br>
-        <%= link_to "Browse our treehouses", houses_path, class: "btn btn-primary m-3" %>
+  <div class= "tree-houses-display cards">
+    <% @houses_sample.each do |house| %>
+      <div class="house-card">
+        <p><%= link_to house.name, house_path(house) %></p>
+        <span class= "house-img"><%=cl_image_tag("treehouses/treehouse_5_fyugpx.jpg") %></span>
+        <p><%= house.price %></p>
+        <p><%= house.description %></p>
       </div>
-    </div>
+    <% end %>
   </div>
+  <%= link_to "Browse our treehouses", houses_path %>
 </div>
-</div>
+
