@@ -1,17 +1,20 @@
 <h1>Hello, <%= @user.email %></h1>
-<h2>Upcoming trips</h2>
+<h2>Upcoming Trips...</h2>
 
 <% @user.bookings.each do |booking| %>
   <%= link_to booking.house.name, house_bookings_path(booking.house, booking) %>
-  <%= booking.checkin %>
-  <%= booking.checkout %>
-  <%= link_to booking_path(booking) do %>
+  Check-in: <%= booking.checkin %>
+  Check-out: <%= booking.checkout %>
+  <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this Treehouse booking?" } do %>
     <i class="fas fa-trash-alt"></i>
   <% end %>
+  <br>
 <% end %>
 
+<h2>My Treehouses...</h2>
 <% @user.houses.each do |house| %>
-  <%= link_to house.name, house_path(house) %>
+  <%= link_to house.name, house_path(house) %><br>
 <% end %>
 
 <%= link_to "Make a new house", new_house_path %>
+
