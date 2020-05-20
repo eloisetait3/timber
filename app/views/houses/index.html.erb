@@ -4,7 +4,7 @@
   </div>
   <div class = "treehouses-index-display">
   	<ul>
-  	  <%@houses.each do |house|%>
+  	  <% @houses.each do |house| %>
       	<li>
       	  <h3><%= link_to house.name, house_path(house) %></h3>
       	  <p><%= house.description %></p>
