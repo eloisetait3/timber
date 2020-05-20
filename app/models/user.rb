@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   # Accessing users own booked houses >>
   has_many :booked_houses, through: :bookings, source: :house
+  has_one_attached :photo
 end
