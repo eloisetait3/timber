@@ -1,12 +1,18 @@
 <div class=“timber-container”>
   <div class= "details">
-    <%=cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
+    <% if @house.photo.attached? %>
+      <%= cl_image_tag @house.photo.key, width: 400 %>
+    <% else %>
+      NO PHOTO
+    <% end %>
   	<h1><strong><%= @house.name %></strong></h1>
-    <p>price: <%= @house.price %></p>
+    <p>price: <strong>£<%= @house.price %></strong></p>
     <p>Location: <%= @house.location %></p>
     <p>Description: <%= @house.description %></p>
   </div>
   <p><%= link_to "Go back", houses_path %>
-  <p><%= link_to 'Edit treehouse', edit_house_path(@house) %></p>
+  <% if current_user == @house.user %>
+    <p><%= link_to 'Edit treehouse', edit_house_path(@house) %></p>
+  <% end %>
   <p><%= link_to 'Book treehouse', new_house_booking_path(@house)%></p>
 </div>
