@@ -3,8 +3,8 @@
     <div class="card p-3">
         <h1>Book this treehouse</h1>
         <%= simple_form_for [ @house, @booking ] do |f| %>
-          <%= f.input :checkin, html5: true, label: 'Check-in' %>
-          <%= f.input :checkout, html5: true, label: 'Check-out' %>
+          <%= f.input :checkin, html5: true, label: 'Check-in', input_html: {id: "range_start"} %>
+          <%= f.input :checkout, html5: true, label: 'Check-out', input_html: {id: "range_end"} %>
           <%= f.input :guests, label: 'How many guests will be staying?' %>
           <!-- need to add a link_to show_house_path -->
           <%= f.submit "Book this treehouse!", class: "btn btn-primary" %>
