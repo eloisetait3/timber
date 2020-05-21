@@ -1,10 +1,10 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update]
-  
+
   def new
     @house = House.new
   end
-  
+
   def create
     @house = House.new(house_params)
     @user = current_user
@@ -16,7 +16,7 @@ class HousesController < ApplicationController
       render :new
     end
   end
- 
+
   def index
     if params[:search].nil?
       @houses = House.all
@@ -24,7 +24,7 @@ class HousesController < ApplicationController
       filter
     end
   end
- 
+
   def show
   end
 
@@ -52,6 +52,6 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit(:name, :location, :description, :price)
+    params.require(:house).permit(:name, :location, :description, :price, :photo)
   end
 end
