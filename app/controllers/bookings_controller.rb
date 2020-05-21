@@ -6,8 +6,9 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @house = House.find(params[:house_id])
     @booking = Booking.new(booking_params)
-    @booking.house = House.find(params[:house_id].to_i)
+    @booking.house = @house
     @booking.user = current_user
     if @booking.save
       redirect_to user_path(current_user)
