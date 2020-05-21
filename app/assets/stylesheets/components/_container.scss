@@ -2,5 +2,6 @@
 	background: linear-gradient(white, $timber-green);
     display: flex; 
     flex-direction:column;
-    align-content: space-between; 
+    height: inherit;
+    margin: 0 auto;
 }
