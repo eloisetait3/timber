@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :houses do
     resources :bookings, only: [:create, :new, :destroy]
+    resources :reviews, only: [:create, :new]
   end
 
   resources :bookings, only: [:show, :destroy]
