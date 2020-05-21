@@ -1,22 +1,19 @@
-<div class = "timber-container">
-  <div class = "banner">
-    <h1 class = "text-center">Stay somewhere extraordinary....</h1>
-  </div>
-  <div class="row justify-content-center">
-    <%= render "shared/filter_form", path: root_path %>
-  </div>
-  <div class= "card-deck" id ="houses-display">
-    <% @houses_sample.each do |house| %>
-      <div class="card">
-        <h3 class= "card-title text-center"><%= link_to house.name, house_path(house) %></h3>
-        <div class ="card-body">
-          <img class= "card-img-top" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse")>
-          <p class="card-text"><%= house.price %></p>
-          <p class="card-text"><%= house.description %></p>
+<div class="container">
+  <div class="row align-items-center full-height">
+    <div class="col-4">
+      <%= image_tag 'illustration.svg', class: 'w-100' %>
+    </div>
+    <div class="col-8 px-5">
+      <h2>Why not stay in a tree house on your next adventure?</h2>
+      <p class="text-muted big-text">Where are you heading?</p>
+      <%#= render "shared/filter_form", path: houses_path %>
+      <%= simple_form_for :search, url: houses_path, method: :get do |f|%>
+        <div class="d-flex align-items-center">
+          <input class="form-control string required" placeholder="eg: New Forest, UK" type="text" name="search[location]" id="search_location">
+          <%# f.input :price, as: :radio_buttons, collection: ["cheap", "medium", "expensive"] %> <%# We will return on this filter tomorrow %>
+          <%= f.submit "Filter", class: "btn btn-primary" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class= "btn timber-btn btn-lg"><%= link_to "Browse all treehouses", houses_path %></div>
 </div>
-
