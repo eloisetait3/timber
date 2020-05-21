@@ -35,10 +35,10 @@
     <p>Location: <%= @house.location %></p>
     <p>Description: <%= @house.description %></p>
   </div>
-  <p><%= link_to "Go back", houses_path %>
+  <p><%= link_to "Go back", houses_path, class: 'btn timber-btn' %>
   <% if current_user == @house.user %>
-    <p><%= link_to 'Edit treehouse', edit_house_path(@house) %></p>
+    <p><%= link_to 'Edit treehouse', edit_house_path(@house), class: 'btn btn-link' %></p>
   <% end %>
-  <p><%= link_to 'Book treehouse', new_house_booking_path(@house)%></p>
+  <p><%= link_to 'Book treehouse', new_house_booking_path(@house), class: 'btn timber-btn' %></p>
 </div>
 
