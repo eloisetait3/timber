@@ -6,11 +6,16 @@
     <div class="card mt-3">
       <h3 class= "card-title text-center">
       <%= link_to house.name, house_path(house) %></h3>
-      <div class ="card-body">
+      <div>
         <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
-        <p class="card-text"><%= house.price %> <%= house.location %></p>
-        <p class="card-text"><%= house.description %></p>
+        <div class ="card-body">
+          <p class="card-text"> <%= house.location %></p>
+          <div class="price-avatar d-flex justify-content-center align-items-center">
+            <span>£<%= house.price %></span>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
+
