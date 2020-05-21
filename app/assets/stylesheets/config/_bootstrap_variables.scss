@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 white;
 $font-size-base: 1rem;
 $h1-font-size:                $font-size-base * 4 !default;
 $h2-font-size:                $font-size-base * 3 !default;
@@ -17,9 +17,10 @@ $enable-gradients: true !default;
 
 // Colors
 $body-color: $gray;
-$navbar-light-color: $white; 
-$primary:    $blue;
-$success:    $green;
+$navbar-light-color: $white;
+$secondary:  black;
+$primary:    #0caf60;
+$success:    #ffd603;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
@@ -31,4 +32,4 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-
+$link-color: black;
