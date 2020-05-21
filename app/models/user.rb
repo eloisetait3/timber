@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # Accessing users own booked houses >>
   has_many :booked_houses, through: :bookings, source: :house
   has_one_attached :photo
+  has_many :reviews
 end
