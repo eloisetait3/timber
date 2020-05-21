@@ -1,30 +1,16 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class = "timber-container">
-  <div class = "filter-form">
-    <%# form-filter %>
-    <%= render "shared/filter_form", path: houses_path %>
-  </div>
-    <div class= "card-deck" id ="houses-display">
-    <% @houses.each do |house| %>
-      <div class="card">
-        <h3 class= "card-title text-center"><%= link_to house.name, house_path(house) %></h3>
-        <div class ="card-body">
-          <img class= "card-img-top" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse")>
-          <p class="card-text"><%= house.price %> <%= house.location %></p>
-          <p class="card-text"><%= house.description %></p>
-        </div>
+<div class="container">
+  <%= render "shared/filter_form", path: houses_path %>
+</div>
+<div class="container grid">
+  <% @houses.each do |house| %>
+    <div class="card mt-3">
+      <h3 class= "card-title text-center">
+      <%= link_to house.name, house_path(house) %></h3>
+      <div class ="card-body">
+        <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
+        <p class="card-text"><%= house.price %> <%= house.location %></p>
+        <p class="card-text"><%= house.description %></p>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
