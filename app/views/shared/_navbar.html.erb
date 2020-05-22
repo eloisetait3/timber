@@ -12,10 +12,11 @@
         <% end %>
           <%= link_to 'My Account', user_path(current_user), class: 'btn btn-link'%>
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn timber-btn'  %>
+
       <% else %>
         <div class="login-form">
           <!-- Button to trigger login modal -->
-          <button type="button" class="btn timber-btn" data-toggle="modal" data-target="#loginModal">Login
+          <button type="button" class="btn btn-link mt-3" data-toggle="modal" data-target="#loginModal">Login
           </button>
            <!-- Login Modal -->
           <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
