@@ -5,7 +5,7 @@
   <% @houses.each do |house| %>
     <div class="card mt-3">
       <h3 class= "card-title text-center">
-      <%= link_to house.name, house_path(house) %></h3>
+      <%= link_to house.name.capitalize, house_path(house) %></h3>
       <div>
       <% if house.photos.attached? %>
       <%= cl_image_tag house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
