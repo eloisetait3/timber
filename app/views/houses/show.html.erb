@@ -7,15 +7,11 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= cl_image_tag @house.photos[0].key, class: "carousel-image d-block w-100", crop: :fill %>
-        </div>
-        <div class="carousel-item carousel-image">
-          <%= cl_image_tag @house.photos[1].key, class: "carousel-image d-block w-100", crop: :fill %>
-        </div>
-        <div class="carousel-item carousel-image">
-          <%= cl_image_tag @house.photos[2].key, class: "carousel-image d-block w-100", crop: :fill %>
-        </div>
+        <% @house.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= cl_image_tag photo.key, class: "carousel-image d-block w-100", crop: :fill %>
+          </div>
+        <% end %>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
