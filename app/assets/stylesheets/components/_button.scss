@@ -3,6 +3,15 @@
 	color: white;
 	border-radius: 4px;
 	margin: 15px;
+  font-weight: bold;
+}
+
+.timber-btn:hover {
+  background-color: gray;
+  color: black;
+  border-radius: 4px;
+  margin: 15px;
+  font-weight: bold;
 }
 
 .treehouses {
@@ -14,9 +23,11 @@
   color: #FFFFFF;
   background: #0caf60;
   transition: 0.2;
+  font-weight: bolder;
 }
 .lime-button:hover {
   color: white;
   background: #bfc811;
+  font-weight: bolder;
 }
 
