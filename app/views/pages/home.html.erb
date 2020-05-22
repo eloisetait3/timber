@@ -6,7 +6,13 @@
     <div class="col-8 px-5">
       <h2>Why not stay in a treehouse on your next adventure?</h2>
       <p class="text-muted big-text">Where are you heading?</p>
-      <%= render "shared/filter_form", path: houses_path %>
+      <%= simple_form_for :search, url: houses_path, method: :get do |f|%>
+        <div class="d-flex align-items-center">
+          <input class="form-control string required" placeholder="eg: New Forest, UK" type="text" name="search[location]" id="search_location">
+          <%= f.submit "Browse all 🌳", class: "btn lime-button" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+

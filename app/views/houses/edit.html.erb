@@ -1,12 +1,14 @@
-<div class="timber-container">
-  <div class="col-6 d-flex flex-column align-items-center">
-    <div class="card p-3">
-      <h2>Edit your <%= @house.name %></h2>
-      <%= render partial: "shared/form", locals: {house: @house} %>
-    </div>
-    <div class= "links">
-      <%= cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
-      <p><%= link_to "See all our available Treehouses", houses_path, class: 'btn treehouses' %></p>
+<div class="container">
+  <div class="row d-flex flex-column align-items-center">
+    <div class="col-8">
+      <div class="card p-3">
+        <h2>Edit your <%= @house.name %></h2>
+        <%= render partial: "shared/form", locals: {house: @house} %>
+      </div>
+      <div class= "links">
+        <%= cl_image_tag("treehouses/Treehouse_2_czhjir.png", :width=>0.5, :crop=>"scale") %>
+          <p><%= link_to "See all our available Treehouses", houses_path, class: 'btn timber-btn' %></p>
+      </div>
     </div>
   </div>
 </div>

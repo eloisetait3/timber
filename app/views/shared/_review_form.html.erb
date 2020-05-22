@@ -1,0 +1,8 @@
+
+<div class = "review-form">
+      <%= simple_form_for([@house, @review]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.input :rating %>
+      <%= f.button :submit %>
+    <% end %>
+</div>
