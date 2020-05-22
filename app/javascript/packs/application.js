@@ -40,3 +40,4 @@ document.addEventListener('turbolinks:load', () => {
     $("#notice").fadeOut(500);
   }, 2000);
 });
+ls
