@@ -1,7 +1,6 @@
 <%= simple_form_for :search, url: houses_path, method: :get do |f|%>
   <div class="d-flex align-items-center">
     <input class="form-control string required" placeholder="eg: New Forest, UK" type="text" name="search[location]" id="search_location">
-    <%# f.input :price, as: :radio_buttons, collection: ["cheap", "medium", "expensive"] %> <%# We will return on this filter tomorrow %>
     <%= f.submit "Filter", class: "btn lime-button" %>
   </div>
 <% end %>
