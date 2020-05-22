@@ -1,20 +1,17 @@
 <section style="margin-top: 60px;">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="div1">
       <h1>Hello, <%= @user.email %></h1>
       <br>
-
       <br>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="div2">
       <% if @user.bookings %>
-      <h2>Upcoming Trips...</h2>
-
-
-      <div class="container grid">
-        <% @user.bookings.each do |booking| %>
-        <div class="card mt-3">
+        <h2>Upcoming Trips...</h2>
+        <div class="container grid" id="div1">
+          <% @user.bookings.each do |booking| %>
+          <div class="card mt-3">
           <h3 class= "card-title text-center">
             <%= link_to booking.house.name, house_bookings_path(booking.house, booking) %></h3>
             <div>
@@ -35,10 +32,9 @@
       </div>
       <% else %>
       <h2>No bookings</h2>
-      <% end %>
-    </div>
+    <% end %>
 
-       <div class="row justify-content-center">
+      <div class="row justify-content-center" id="div2">
       <% if @user.houses %>
       <h2>My Treehouses...</h2>
 
@@ -55,18 +51,18 @@
                 <div class="price-avatar d-flex justify-content-center align-items-center">
                   <span>£<%= house.price %></span>
 
+                  </div>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
+        <% else %>
+        <h2>No houses yet</h2>
+        <% end %>
       </div>
-      <% else %>
-      <h2>No houses yet</h2>
-      <% end %>
-    </div>
-
+      </div>
     <div class="row justify-content-center">
       <%= link_to "Make a new house", new_house_path, class: 'btn timber-btn' %>
     </div>
