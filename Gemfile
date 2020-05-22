@@ -35,8 +35,6 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-gem 'cloudinary', '~> 1.12.0'
-
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -69,5 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Cloudinary for image hosting
 gem 'cloudinary', '~> 1.12.0'
 
-# Database Seed 
+# Database Seed
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
