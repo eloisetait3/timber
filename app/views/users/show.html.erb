@@ -1,28 +1,30 @@
-<section style="margin-top: 60px;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <h1>Hello, <%= @user.email %></h1>
-      <br>
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Hello <%= @user.name %>!</h1>
+    <br>
+  </div>
 
-      <br>
-    </div>
-
-    <div class="row justify-content-center">
-      <% if @user.bookings %>
+  <div class="row justify-content-center">
+    <% if @user.bookings.empty? %>
+      <h2>You don’t have any upcoming trips!</h2>
+    <% else %>
       <h2>Upcoming Trips...</h2>
-
 
       <div class="container grid">
         <% @user.bookings.each do |booking| %>
-        <div class="card mt-3">
-          <h3 class= "card-title text-center">
-            <%= link_to booking.house.name, house_bookings_path(booking.house, booking) %></h3>
-            <div>
-              <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
-              <div class ="card-body">
-                <p class="card-text"> <%= booking.house.location %></p>
-                <p class="card-text"> Checkin: <%= booking.checkin %></p>
-                <p class="card-text">Checkout: <%= booking.checkout %></p>
+          <div class="card mt-3">
+            <h3 class= "card-title text-center"><%= link_to booking.house.name, house_bookings_path(booking.house, booking) %></h3>
+              <div>
+                <% if booking.house.photos.attached? %>
+                  <%= cl_image_tag booking.house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
+                <% else %>
+                  <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
+                <% end %>
+
+                <div class ="card-body">
+                  <p class="card-text"> <%= booking.house.location %></p>
+                  <p class="card-text"> Checkin: <%= booking.checkin %></p>
+                  <p class="card-text">Checkout: <%= booking.checkout %></p>
 
                 <div class="price-avatar d-flex justify-content-center align-items-center">
                   <span>£<%= booking.house.price %></span>
@@ -30,45 +32,40 @@
               </div>
             </div>
           </div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
-      <% else %>
-      <h2>No bookings</h2>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
-       <div class="row justify-content-center">
-      <% if @user.houses %>
+
+  <div class="row justify-content-center">
+    <% if @user.houses.empty? %>
+      <h2>No houses yet</h2>
+    <% else %>
       <h2>My Treehouses...</h2>
-
-
       <div class="container grid">
         <% @user.houses.each do |house| %>
         <div class="card mt-3">
-          <h3 class= "card-title text-center">
-            <%= link_to house.name, house_path(house) %></h3>
+          <h3 class= "card-title text-center"><%= link_to house.name, house_path(house) %></h3>
             <div>
-              <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
-              <div class ="card-body">
+              <% if house.photos.attached? %>
+                <%= cl_image_tag house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
+              <% else %>
+                <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
+              <% end %>              <div class ="card-body">
                 <p class="card-text"> <%= house.location %></p>
                 <div class="price-avatar d-flex justify-content-center align-items-center">
                   <span>£<%= house.price %></span>
-
                 </div>
               </div>
             </div>
           </div>
-          <% end %>
-        </div>
+       <% end %>
       </div>
-      <% else %>
-      <h2>No houses yet</h2>
-      <% end %>
-    </div>
-
-    <div class="row justify-content-center">
-      <%= link_to "Make a new house", new_house_path, class: 'btn timber-btn' %>
-    </div>
+    <% end %>
   </div>
-</section>
+
+  <div class="row justify-content-center">
+    <%= link_to "Make a new house", new_house_path, class: 'btn timber-btn' %>
+  </div>
+</div>
