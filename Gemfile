@@ -1,3 +1,5 @@
+
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -66,3 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Cloudinary for image hosting
 gem 'cloudinary', '~> 1.12.0'
+
+# Database Seed 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
