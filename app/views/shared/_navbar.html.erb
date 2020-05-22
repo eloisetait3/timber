@@ -7,15 +7,17 @@
     </div>
     <div class = "status-features d-flex">
       <% if user_signed_in? %>
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-link'  %>
-        <%= link_to 'My Account', user_path(current_user), class: 'btn btn-secondary'%>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag(current_user.photo.key, class: "avatar-bordered") %>
-        <% end %>
+        <div class="d-flex align-items-center">
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-link mr-3'  %>
+          <%= link_to 'My Account', user_path(current_user), class: 'btn btn-secondary mr-3'%>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag(current_user.photo.key, class: "avatar-bordered") %>
+          <% end %>
+        </div>
       <% else %>
         <div class="login-form">
           <!-- Button to trigger login modal -->
-          <button type="button" class="btn timber-btn" data-toggle="modal" data-target="#loginModal">Login
+          <button type="button" class="btn btn-link mt-3" data-toggle="modal" data-target="#loginModal">Login
           </button>
            <!-- Login Modal -->
           <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
