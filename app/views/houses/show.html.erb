@@ -1,41 +1,47 @@
-<div class=“timber-container”>
-  <div class= "details">
-    <% if @house.photos.attached? %>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active carousel-image">
-              <%= cl_image_tag @house.photos[0].key, class: "d-block w-100", crop: :fill %>
-          </div>
-          <div class="carousel-item carousel-image">
-              <%= cl_image_tag @house.photos[1].key, class: "d-block w-100", crop: :fill %>
-          </div>
-          <div class="carousel-item carousel-image">
-              <%= cl_image_tag @house.photos[2].key, class: "d-block w-100", crop: :fill %>
-          </div>
+<div class= "details">
+  <% if @house.photos.attached? %>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= cl_image_tag @house.photos[0].key, class: "carousel-image d-block w-100", crop: :fill %>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item carousel-image">
+          <%= cl_image_tag @house.photos[1].key, class: "carousel-image d-block w-100", crop: :fill %>
+        </div>
+        <div class="carousel-item carousel-image">
+          <%= cl_image_tag @house.photos[2].key, class: "carousel-image d-block w-100", crop: :fill %>
+        </div>
       </div>
-    <% else %>
-      NO PHOTO
-    <% end %>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  <% else %>
+    NO PHOTO
+  <% end %>
+  
+  <div class="container">
     <h1><strong><%= @house.name %></strong></h1>
     <p>price: <strong>£<%= @house.price %></strong></p>
     <p>Location: <%= @house.location %></p>
     <p>Description: <%= @house.description %></p>
+    
+    <p><%= link_to "Go back", houses_path, class: 'btn timber-btn' %>
+      <% if current_user == @house.user %>
+    <p><%= link_to 'Edit treehouse', edit_house_path(@house), class: 'btn btn-link' %></p>
+      <% end %>
+    <p><%= link_to 'Book treehouse', new_house_booking_path(@house), class: 'btn timber-btn' %></p>
   </div>
-
 
 <div id = "reviews-section">
   <div class = "card border-success mb-3">
@@ -68,7 +74,5 @@
     <%end %>
   </div>
 </div>
-
 </div>
-
- 
+</div>
