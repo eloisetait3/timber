@@ -35,10 +35,40 @@
     <p>Location: <%= @house.location %></p>
     <p>Description: <%= @house.description %></p>
   </div>
-  <p><%= link_to "Go back", houses_path, class: 'btn timber-btn' %>
-  <% if current_user == @house.user %>
-    <p><%= link_to 'Edit treehouse', edit_house_path(@house), class: 'btn btn-link' %></p>
-  <% end %>
-  <p><%= link_to 'Book treehouse', new_house_booking_path(@house), class: 'btn timber-btn' %></p>
+
+
+<div id = "reviews-section">
+  <div class = "card border-success mb-3">
+    <h3>How was your stay at <%= @house.name %>?</h3>
+    <div class = "review-form">
+      <%= simple_form_for([@house, @review]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.input :rating %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+  <div id = "reviews">
+    <% if @house.reviews.blank? %>
+      <h3>There are currently no reviews for <%= @house.name %></h3>
+
+    <% else %>
+      <h3><%= pluralize @house.reviews.size, "review" %></h3>
+    <% end %>
+  </div>
+  <div class = "border-top">
+      <%= @house.reviews.each do |review| %>
+        <div class="card border-success mb-3" style="max-width: 18rem;">
+        <div class ="header justify-content-between">
+          <%= @review.user%>
+          <%= @review.rating %>
+        </div>
+        <%= @review.content %>
+    </div>
+    <%end %>
+  </div>
 </div>
 
+</div>
+
+ 

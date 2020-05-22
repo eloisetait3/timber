@@ -10,10 +10,10 @@ class ReviewsController < ApplicationController
   	@review = Review.new(review_params)
   	@review.house = @house
   	@review.user = current_user
-  	if review.save
-  	  redirect_to house_path(@house)
+  	if @review.save
+  	  redirect_to house_path(@house, anchor: "review-#{@review.id}")
   	else
-      render :new
+      render 'house/show'
     end
   end
 
