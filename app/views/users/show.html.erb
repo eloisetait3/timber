@@ -16,15 +16,17 @@
             <h3 class= "card-title text-center"><%= link_to booking.house.name, house_bookings_path(booking.house, booking) %></h3>
               <div>
                 <% if booking.house.photos.attached? %>
-                  <%= cl_image_tag booking.house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
+                  <%= cl_image_tag booking.house.photos[0].key, class: "card-img-top", crop: :fill %>
                 <% else %>
-                  <img class= "card-img-top mb-3" src= "https://i.pinimg.com/564x/4a/ea/b8/4aeab8d0c621d6413f4438a1c8bbf37f.jpg" alt = "treehouse">
+                  <img class= "card-img-top" src= "https://i.pinimg.com/564x/4a/ea/b8/4aeab8d0c621d6413f4438a1c8bbf37f.jpg" alt = "treehouse">
                 <% end %>
 
-                <div class ="card-body">
-                  <p class="card-text"> <%= booking.house.location %></p>
-                  <p class="card-text"> Checkin: <%= booking.checkin %></p>
-                  <p class="card-text">Checkout: <%= booking.checkout %></p>
+                <div class ="card-body d-flex justify-content-between align-items-center">
+                 <div class="w-75">
+                    <p class="card-text p-text"> <%= booking.house.location %></p>
+                    <p class="card-text p-text"> Checkin: <%= booking.checkin %></p>
+                    <p class="card-text p-text">Checkout: <%= booking.checkout %></p>
+                 </div>
 
                 <div class="price-avatar d-flex justify-content-center align-items-center">
                   <span>£<%= booking.house.price %></span>
@@ -52,8 +54,9 @@
                 <%= cl_image_tag house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
               <% else %>
                 <img class= "card-img-top mb-3" src= "http://res.cloudinary.com/dynjb5ftd/image/upload/v1589976577/treehouses/treehouse_5_fyugpx.jpg" alt = "treehouse">
-              <% end %>              <div class ="card-body">
-                <p class="card-text"> <%= house.location %></p>
+              <% end %>              
+                <div class ="card-body d-flex justify-content-between align-items-center">
+                < p class="card-text"> <%= house.location %></p>
                 <div class="price-avatar d-flex justify-content-center align-items-center">
                   <span>£<%= house.price %></span>
                 </div>
