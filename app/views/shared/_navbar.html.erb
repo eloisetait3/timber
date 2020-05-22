@@ -72,28 +72,6 @@
                   <div class="modal-body mx-3">
                     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                       <%= f.error_notification %>
-
-<<<<<<< HEAD
-                      <div class="form-inputs mb-5">
-                        <%= f.input :email,
-                                    required: true,
-                                    autofocus: true,
-                                    input_html: { autocomplete: "email" }%>
-                        <%= f.input :password,
-                                    required: true,
-                                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                                    input_html: { autocomplete: "new-password" } %>
-                        <%= f.input :password_confirmation,
-                                    required: true,
-                                    input_html: { autocomplete: "new-password" } %>
-                        <%= f.input :photo, as: :file %>
-                      </div>
-                    <div class = "modal-footer d-flex justify-content-center">
-                      <div class="form-actions">
-                        <%= f.button :submit, "Sign up", class:"timber-btn" %>
-                    <% end %>
-                      </div>
-=======
                     <div class="form-inputs mb-5">
                      <%= f.input :name,
                                   required: true,
@@ -116,7 +94,6 @@
                     <div class="form-actions">
                       <%= f.button :submit, "Sign up", class:"timber-btn" %>
                    <% end %>
->>>>>>> ff0454889c22fc66b914ef3866ad4705096f32a5
                     </div>
                   </div>
                 </div>
