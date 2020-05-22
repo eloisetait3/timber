@@ -36,4 +36,8 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr("#range_start", {
     plugins: [new rangePlugin({ input: "#range_end" })]
   });
+  setTimeout(function() {
+    $("#notice").fadeOut(500);
+  }, 2000);
 });
+ls
