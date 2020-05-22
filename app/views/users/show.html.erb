@@ -1,18 +1,17 @@
 <section style="margin-top: 60px;">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="div1">
       <h1>Hello, <%= @user.email %></h1>
       <br>
-
       <br>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="div2">
       <% if @user.bookings %>
       <h2>Upcoming Trips...</h2>
 
 
-      <div class="container grid">
+      <div class="container grid" id="div1">
         <% @user.bookings.each do |booking| %>
         <div class="card mt-3">
           <h3 class= "card-title text-center">
@@ -38,7 +37,7 @@
       <% end %>
     </div>
 
-       <div class="row justify-content-center">
+       <div class="row justify-content-center" id="div2">
       <% if @user.houses %>
       <h2>My Treehouses...</h2>
 
