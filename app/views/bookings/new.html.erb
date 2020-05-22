@@ -11,9 +11,9 @@
         <% end %>
         <h1 class="text-center">Book this treehouse</h1>
       <% if @house.photos.attached? %>
-      <%= cl_image_tag @house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
+        <%= cl_image_tag @house.photos[0].key, class: "card-img-top mb-3", crop: :fill %>
       <% else %>
-      NO PHOTO
+        <img class= "card-img-top mb-3" src= "https://i.pinimg.com/564x/4a/ea/b8/4aeab8d0c621d6413f4438a1c8bbf37f.jpg" alt = "treehouse">
       <% end %>
         <%= simple_form_for [ @house, @booking ] do |f| %>
           <%= f.input :checkin, html5: true, label: 'Check-in', input_html: { id: "range_start" } %>
